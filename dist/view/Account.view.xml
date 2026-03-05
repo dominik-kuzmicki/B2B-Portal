@@ -90,7 +90,7 @@
                             <HBox justifyContent="SpaceBetween" class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                                 <VBox>
                                     <Text text="Order #{id}" class="text-lg font-medium"/>
-                                    <Text text="Placed on {createdat}" class="text-sm text-gray-6000"/>
+                                    <Text text="{path: 'createdat', formatter: '.formatDateWithLabel'}"  class="text-sm text-gray-6000"/>
                                 </VBox>
                                 <HBox class="flex items-center space-x-4 mt-2 sm:mt-0" alignItems="Center">
                                     <ObjectStatus text="{status}" state="{ path: 'status', formatter: '.formatStatusState' }" class="inline-flex px-3 py-1 text-sm font-medium rounded-full"/>

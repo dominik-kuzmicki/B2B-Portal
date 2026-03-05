@@ -22,12 +22,22 @@ sap.ui.define([
         },
 
         onAddToCart: function () {
+            const oStepInput = this.getView().byId("quantityInput");
+            const iQty = Number(oStepInput.getValue());
+
             const oProduct = this.getView().getModel("product").getData();
             if (!oProduct) return;
 
-            CartService.addProduct(this.getOwnerComponent(), oProduct, (product) => {
+            if (iQty > oProduct.stock) {
+                MessageToast.show("Not enough stock available");
+                return;
+            }
+
+            CartService.addProduct(this.getOwnerComponent(),  { ...oProduct, quantity: iQty }, (product) => {
                 MessageToast.show(`${product.name} added to cart`, { duration: 300 });
             });
+
+            oStepInput.setValue(1);
         },
 
         onBack: function () {

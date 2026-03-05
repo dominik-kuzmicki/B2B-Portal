@@ -21,7 +21,7 @@
             <HBox justifyContent="SpaceBetween" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <VBox>
                     <Text text="Order #{order>/id}" class="text-3xl font-bold"/>
-                    <Text text="Placed on {order>/createdat}" class="text-gray-600 mt-1"/>
+                    <Text text="{path: 'order>/createdat', formatter: '.formatDateWithLabel'}" class="text-gray-600 mt-1"/>
                 </VBox>
                 <HBox class="mt-4 sm:mt-0 p-0">
                     <Button text="Repeat Order" press=".onRepeatOrder" class="btn btn-primary flex" icon="sap-icon://copy"/>

@@ -89,6 +89,18 @@ sap.ui.define([
                 default:
                     return "None";
             }
+        },
+
+        formatDateWithLabel: function(sDate) {
+            if (!sDate) return "";
+
+            const oDate = new Date(sDate);
+            const day = String(oDate.getDate()).padStart(2, "0");
+            const month = String(oDate.getMonth() + 1).padStart(2, "0");
+            const year = oDate.getFullYear();
+
+            return `Placed on ${day}.${month}.${year}`;
         }
+        
     });
 });

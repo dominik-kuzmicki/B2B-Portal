@@ -25,7 +25,7 @@ sap.ui.define([
             const oProduct = oEvent.getSource().getBindingContext()?.getObject();
             if (!oProduct) return;
 
-            CartService.addProduct(this.getOwnerComponent(), oProduct, (product) => {
+            CartService.addProduct(this.getOwnerComponent(), { ...oProduct, quantity: 1 }, (product) => {
                 MessageToast.show(`${product.name} added to cart`, { duration: 300 });
             });
         },

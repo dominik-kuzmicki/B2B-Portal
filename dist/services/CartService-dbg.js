@@ -15,7 +15,7 @@ sap.ui.define([], function () {
             if (iIndex !== -1) {
                 aItems[iIndex] = {
                     ...aItems[iIndex],
-                    quantity: aItems[iIndex].quantity + 1
+                    quantity: aItems[iIndex].quantity + Number(oProduct.quantity) || 1
                 };
             } else {
                 aItems.push({
