@@ -1,6 +1,7 @@
 applications:
   - name: b2b-app
-    memory: 128M
+    instances: 2
+    memory: 512M
     buildpacks:
       - nodejs_buildpack  
     command: npm start
